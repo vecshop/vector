@@ -16,93 +16,87 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background: url(img/MOCKUP\ BUILD\ 2.png); /* Blue gradient background */
-            background-size:cover;
-
+            background: linear-gradient(135deg, #4a90e2, #007aff); /* Blue gradient background */
+            background-size: cover;
         }
         .container {
             text-align: center;
-            background: white;
-            padding: 40px;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 90%; /* Adjusted max-width for a wider card */
-            width: 50%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+            width: 80%; /* Adjusted width for a smaller card */
+            max-width: 400px; /* Set a max-width for larger screens */
             justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
         }
-        .logo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
+        .welcome-text {
+            margin-bottom: 20px;
         }
         .logo img {
-            max-width: 150px;
+            max-width: 100px;
             height: auto;
-            scale: 130%;
+            margin-bottom: 20px;
         }
         .links {
             display: flex;
-            justify-content: center; /* Center align links horizontally */
-            align-items: center;
-            gap: 40%; /* Spacing between links */
+            flex-direction: column;
+            gap: 15px; /* Spacing between links */
             margin-top: 20px;
-            width: 100%;
-            max-width: 100%;
         }
         .links a {
-            margin: 10px;
             text-decoration: none;
             color: #333; /* Text color adjusted for contrast */
-            text-align: center; /* Center align text */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 3px solid transparent; /* Border initially transparent */
+            background: white;
+            border: 2px solid #0B769B; /* Border color */
             border-radius: 8px; /* Rounded border */
             padding: 10px 20px;
-            width: auto;
-            max-width: none; /* Optional: Set max-width for larger screens */
-            text-align: center; /* Optional: Center align text */
-            scale: 130%;
-            transition: all 0.5s ease;
-        }
-        .links a i {
-            margin-bottom: 5px; /* Space between icon and text */
-            
+            text-align: center; /* Center align text */
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow */
         }
         .links a:hover {
-            color: #0B769B; /* Text color on hover */
-            border-color: #0B769B; /* Border color on hover */
-            transform: scale(1.05); /* Scale up slightly on hover */
+            background: #0B769B; /* Background color on hover */
+            color: white; /* Text color on hover */
+            transform: scale(1.05); /* Scale up on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
         }
         .links a:hover i {
-            color: #0B769B; /* Icon color on hover */
+            color: white; /* Icon color on hover */
+        }
+        .links a i {
+            margin-right: 8px; /* Space between icon and text */
+        }
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* Spacing between social media icons */
+            margin-top: 20px;
+        }
+        .social-media a {
+            text-decoration: none;
+            color: #333; /* Text color adjusted for contrast */
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+        .social-media a:hover {
+            color: #0B769B; /* Color on hover */
+            transform: scale(1.2); /* Scale up on hover */
         }
 
         @media (max-width: 610px) {
-            /* .container {
-                max-width: 90%;
-                width: 90%;
-            } */
-            .logo {
-                position: static;
-                transform: none;
-                z-index: 0;
-            }
-            .logo img {
-                scale: 100%;
+            .container {
+                width: 90%; /* Adjusted width for smaller screens */
+                max-width: 90%; /* Remove max-width for smaller screens */
             }
             .links {
-                flex-direction: column;
-                gap: 20px; /* Spacing between links */
-                margin-top: 20px;
+                gap: 10px; /* Spacing between links */
             }
             .links a {
-                max-width: 80%;
-                width: 80%;
-                scale: 100%;
+                padding: 8px 16px; /* Adjusted padding for smaller screens */
+            }
+            .social-media a {
+                font-size: 20px; /* Adjusted font size for smaller screens */
             }
         }
         
@@ -110,7 +104,11 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo mb-3">
+        <div class="welcome-text">
+            <h2>Selamat Datang di Situs Terbaru Vector</h2>
+            <p>Eksplor semua layanan dan produk kami di situs ini.</p>
+        </div>
+        <div class="logo">
             <img src="img/V'CTOR LOGO SILUET.png" alt="Company Logo">
         </div>
         <div class="links">
@@ -121,6 +119,21 @@
             <a href="https://forms.zohopublic.com/harkizayte/form/Printing/formperma/7rxS0ErsnaBiaei0RJ6v4TxkajzzvTA6eQblEnYQ4cY" target="_blank">
                 <i data-feather="printer"></i>
                 <span>Printing</span>
+            </a>
+            <a href="about.html" target="_blank">
+                <i data-feather="info"></i>
+                <span>Tentang Kami</span>
+            </a>
+        </div>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank">
+                <i data-feather="facebook"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <i data-feather="instagram"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <i data-feather="twitter"></i>
             </a>
         </div>
     </div>
