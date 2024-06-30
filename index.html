@@ -3,137 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Printing - Your Company Name</title>
+    <title>Vector Digital Printing</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #4a90e2, #007aff); /* Blue gradient background */
-            background-size: cover;
-        }
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
-            width: 80%; /* Adjusted width for a smaller card */
-            max-width: 400px; /* Set a max-width for larger screens */
-            justify-content: center;
-            border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
-        }
-        .welcome-text {
-            margin-bottom: 20px;
-        }
-        .logo img {
-            max-width: 100px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px; /* Spacing between links */
-            margin-top: 20px;
-        }
-        .links a {
-            text-decoration: none;
-            color: #333; /* Text color adjusted for contrast */
-            background: white;
-            border: 2px solid #0B769B; /* Border color */
-            border-radius: 8px; /* Rounded border */
-            padding: 10px 20px;
-            text-align: center; /* Center align text */
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow */
-        }
-        .links a:hover {
-            background: #0B769B; /* Background color on hover */
-            color: white; /* Text color on hover */
-            transform: scale(1.05); /* Scale up on hover */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
-        }
-        .links a:hover i {
-            color: white; /* Icon color on hover */
-        }
-        .links a i {
-            margin-right: 8px; /* Space between icon and text */
-        }
-        .social-media {
-            display: flex;
-            justify-content: center;
-            gap: 15px; /* Spacing between social media icons */
-            margin-top: 20px;
-        }
-        .social-media a {
-            text-decoration: none;
-            color: #333; /* Text color adjusted for contrast */
-            font-size: 24px;
-            transition: all 0.3s ease;
-        }
-        .social-media a:hover {
-            color: #0B769B; /* Color on hover */
-            transform: scale(1.2); /* Scale up on hover */
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
-        @media (max-width: 610px) {
-            .container {
-                width: 90%; /* Adjusted width for smaller screens */
-                max-width: 90%; /* Remove max-width for smaller screens */
+        
+
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Behind all other content */
+        }
+
+        .area {
+            background: #4e54c8;
+            background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .circles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+        }
+
+        .circles li:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+        .circles li:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+
+        .circles li:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
+
+        .circles li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+
+        .circles li:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+
+        .circles li:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+
+        .circles li:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
+
+        .circles li:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
+
+        .circles li:nth-child(9) {
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+
+        .circles li:nth-child(10) {
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
             }
-            .links {
-                gap: 10px; /* Spacing between links */
-            }
-            .links a {
-                padding: 8px 16px; /* Adjusted padding for smaller screens */
-            }
-            .social-media a {
-                font-size: 20px; /* Adjusted font size for smaller screens */
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
             }
         }
-        
+        .links a:hover {
+            color: #fff; /* Warna teks diubah menjadi putih */
+        }
+
+        .links a:hover {
+            border-color: rgba(255, 255, 255, 0.8); /* Warna border diubah menjadi transparan putih */
+        }
+
     </style>
 </head>
 <body>
+    
+    <div class="background-container">
+        <div class="area">
+            <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
     <div class="container">
+        <div class="context1">
+            <h1 id="welcome-text1">Hai!</h1>    
+        </div>
+        
+        <div class="context2">
+            <h2 id="welcome-text2">Selamat Datang di Situs Terbaru Vector</h2>
+        </div>
+        
         <div class="welcome-text">
-            <h2>Selamat Datang di Situs Terbaru Vector</h2>
             <p>Eksplor semua layanan dan produk kami di situs ini.</p>
         </div>
         <div class="logo">
             <img src="img/V'CTOR LOGO SILUET.png" alt="Company Logo">
         </div>
         <div class="links">
-            <a href="https://store8726.store.link/" target="_blank">
-                <i data-feather="pen-tool"></i>
-                <span>Alat Tulis</span>
+            <a href="https://store8726.store.link/" target="_self">
+                <i data-feather="shopping-bag"></i>
+                <span>Produk Kami</span>
             </a>
-            <a href="https://forms.zohopublic.com/harkizayte/form/Printing/formperma/7rxS0ErsnaBiaei0RJ6v4TxkajzzvTA6eQblEnYQ4cY" target="_blank">
+            <a href="https://forms.zohopublic.com/harkizayte/form/Printing/formperma/7rxS0ErsnaBiaei0RJ6v4TxkajzzvTA6eQblEnYQ4cY" target="_self">
                 <i data-feather="printer"></i>
-                <span>Printing</span>
+                <span>Layanan Printing</span>
             </a>
-            <a href="about.html" target="_blank">
+            <a href="about.html" target="_self">
                 <i data-feather="info"></i>
                 <span>Tentang Kami</span>
             </a>
         </div>
         <div class="social-media">
-            <a href="https://facebook.com" target="_blank">
+            <a href="https://facebook.com" target="_self">
                 <i data-feather="facebook"></i>
             </a>
-            <a href="https://instagram.com" target="_blank">
+            <a href="https://instagram.com" target="_self">
                 <i data-feather="instagram"></i>
             </a>
-            <a href="https://twitter.com" target="_blank">
+            <a href="https://twitter.com" target="_self">
                 <i data-feather="twitter"></i>
+            </a>
+            <a href="https://tiktok.com" target="_self">
+                <i class="bi bi-tiktok"></i>
             </a>
         </div>
     </div>
