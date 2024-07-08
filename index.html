@@ -164,6 +164,10 @@
 </script>
 <body>
     
+        <div class="loading-overlay">
+            <img src="https://cdn.pixabay.com/animation/2022/10/11/03/16/03-16-39-160_512.gif" alt="">
+        </div>
+    
     <div class="background-container">
         <div class="area">
             <ul class="circles">
@@ -204,10 +208,14 @@
                 <i data-feather="printer"></i>
                 <span>Layanan Printing</span>
             </a>
-            <a href="about.html" target="_self">
+            <!-- <a href="#" target="_self">
+                <i data-feather="codepen"></i>
+                <span>Logo Design</span>
+            </a> -->
+            <!-- <a href="about.html" target="_self">
                 <i data-feather="info"></i>
                 <span>Tentang Kami</span>
-            </a>
+            </a> -->
         </div>
         <div class="social-media">
             <a href="https://web.facebook.com/profile.php?id=61561140134467" target="_self">
@@ -230,5 +238,50 @@
     <script>
         feather.replace(); // Initialize Feather Icons
     </script>
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Remove loading overlay after page load
+        window.addEventListener('load', function() {
+            const loadingOverlay = document.querySelector('.loading-overlay');
+            loadingOverlay.style.opacity = '0'; // Fade out
+            setTimeout(() => {
+                loadingOverlay.style.display = 'none'; // Remove from view after transition
+            }, 500); // Match the transition duration
+
+            const container = document.querySelector('.container');
+            container.style.display = 'block';
+            setTimeout(function() {
+                container.classList.add('visible'); // Add class to trigger the transition
+            }, 10); // Delay to ensure the display change is processed
+        });
+    </script>
+    <script>document.querySelectorAll('.links a').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            const targetUrl = this.href;
+
+            // Create a fade-out effect
+            document.body.style.transition = 'opacity 0.5s';
+            document.body.style.opacity = '0';
+
+            setTimeout(() => {
+                window.location.href = targetUrl; // Redirect after fade-out
+            }, 500); // Delay to match the fade-out duration
+        });
+    });
+
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            document.body.style.transition = 'none';
+            document.body.style.opacity = '1';
+        } else {
+            document.body.style.transition = 'opacity 0.5s';
+            document.body.style.opacity = '1';
+        }
+    });
+</script>
+
 </body>
 </html>
