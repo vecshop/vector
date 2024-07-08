@@ -8,9 +8,28 @@ body {
   margin: 0;
 }
 
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0); /* Purple and pink gradient */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensures it's on top of everything */
+}
+
+.loading-overlay img {
+    width: 10%; /* Adjust size as needed */
+}
+
+
+
 .container {
   text-align: center;
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  background: rgba(255, 255, 255, 0.25); /* Semi-transparent white background */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
@@ -18,10 +37,21 @@ body {
   max-width: 400px; /* Set a max-width for larger screens */
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
+    display: none; /* Hidden initially */
+    opacity: 0; /* Initially invisible */
+    transform: translateY(20px); /* Start position for the animation */
+    transition: opacity 1s ease, transform 1s ease; /* Transition effects */
+    backdrop-filter: blur(5px);
+}
+
+.container.visible {
+    opacity: 1; /* Make it visible */
+    transform: translateY(0); /* Move to the final position */
 }
 
 .welcome-text {
   margin-bottom: 20px;
+    color: white;
 }
 
 .logo img {
@@ -75,7 +105,7 @@ body {
 
 .social-media a {
   text-decoration: none;
-  color: #000000; /* Text color adjusted for contrast */
+  color: #ffffff; /* Text color adjusted for contrast */
   font-size: 24px;
   transition: all 0.3s ease;
 }
@@ -109,7 +139,7 @@ body {
 }
 
 @keyframes animateWelcome1 {
-  
+
   0% {
       opacity: 0;
       transform: translateY(-20px);
@@ -153,7 +183,7 @@ body {
   60% {
       opacity: 1;
       transform: translateY(0px);
-    
+
   }
 
   80% {
@@ -161,12 +191,12 @@ body {
       transform: translateY(0px);
 
   }
-  
+
   100% {
     opacity: 0;
     transform: translateY(20px);
   }
-  
+
 }
 
 .context1 #welcome-text1 {
@@ -175,15 +205,14 @@ body {
   left: 0%;
   right: 0%;
   text-align: center;
-  color: #000;
+  color: #ffffff;
   animation: animateWelcome1 5s ease-in-out infinite;
 }
 
 .context2 #welcome-text2 {
   text-align: center;
-  color: #000;
+  color: #ffffff;
   opacity: 0;
   animation: animateWelcome2 5s ease-in-out infinite;
-  
-}
 
+}
