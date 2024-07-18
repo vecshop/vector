@@ -232,7 +232,7 @@
             </a>
         </div>
     </div>
-    <audio id="welcome-audio" src="vector.mp3"></audio>
+    <audio autoplay id="welcome-audio" src="vector.mp3"></audio>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -257,7 +257,6 @@
                 container.classList.add('visible'); // Add class to trigger the transition
             }, 10); // Delay to ensure the display change is processed
             // Play welcome audio
-            document.getElementById('welcome-audio').play();
         });
     </script>
     <script>document.querySelectorAll('.links a').forEach(link => {
